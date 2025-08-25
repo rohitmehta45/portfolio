@@ -1,0 +1,68 @@
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const navItems = [
+    { label: "HOME", href: "#home" },
+    { label: "ABOUT", href: "#about" },
+    { label: "SKILLS", href: "#skills" },
+    { label: "PROJECTS", href: "#projects" },
+    { label: "EXPERIENCE", href: "#experience" },
+    { label: "CONTACT", href: "#contact" }
+  ];
+
+  return (
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white brutalist-border-b">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <div className="brutalist-heading text-2xl">
+            <span className="brutalist-accent">R</span>OHIT
+          </div>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-8">
+            {navItems.map((item) => (
+              <a 
+                key={item.label}
+                href={item.href}
+                className="brutalist-underline font-bold text-sm tracking-wide hover:brutalist-accent transition-colors"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden brutalist-border brutalist-shadow p-2"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden brutalist-border-t bg-white py-4">
+            {navItems.map((item) => (
+              <a 
+                key={item.label}
+                href={item.href}
+                className="block py-3 font-bold text-sm tracking-wide hover:brutalist-accent transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Navigation;
+
