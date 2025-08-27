@@ -47,9 +47,9 @@ const Contact = () => {
             <br />
             <span className="brutalist-accent">SOMETHING GREAT</span>
           </h2>
-          
-          <p className="brutalist-text text-gray-300 max-w-2xl mx-auto mb-12 text-xl">
-            Ready to turn your ideas into reality? I'm always excited to work on 
+
+          <p className="text-gray-500 max-w-xl mx-auto mb-12 text-xl">
+            Ready to turn your ideas into reality? I'm always excited to work on
             new projects and collaborate with innovative teams.
           </p>
 

@@ -4,32 +4,29 @@ import developerPortrait from '../assets/developerportrait.jpg';
 
 const Hero = () => {
   const [textVisible, setTextVisible] = useState(false);
-  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
     const timer = setTimeout(() => setTextVisible(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  // Letter animation variants
+  const letterVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: (i) => ({
+      y: [0, -10, 0],
+      opacity: 1,
+      transition: {
+        delay: i * 0.1,
+        y: { repeat: Infinity, repeatType: "mirror", duration: 0.6 },
+      },
+    }),
   };
 
-  return (
-    <section
-      className={`relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 transition-colors duration-500 ${
-        theme === 'light' ? 'bg-white' : 'bg-gray-900'
-      }`}
-    >
-      <div className="absolute top-6 right-6">
-        <button
-          onClick={toggleTheme}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 transition"
-        >
-          {theme === 'light' ? '🌙 Dark Mode' : '☀️ Light Mode'}
-        </button>
-      </div>
+  const fullName = "ROHIT MEHTA".split("");
 
+  return (
+    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-16 bg-gradient-to-r from-blue-100 via-white to-blue-50">
       <div className="max-w-7xl w-full">
         <div className="brutalist-grid-asymmetric items-center">
           <div className="space-y-8">
@@ -38,13 +35,20 @@ const Hero = () => {
                 initial={{ y: 80, opacity: 0 }}
                 animate={textVisible ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.8, ease: 'easeOut' }}
-                className={`brutalist-heading brutalist-heading-xl ${
-                  theme === 'dark' ? 'text-white' : 'text-black'
-                }`}
+                className="brutalist-heading brutalist-heading-lg text-black"
               >
-                ROHIT
-                <br />
-                <span className="brutalist-accent">MEHTA</span>
+                {fullName.map((char, index) => (
+                  <motion.span
+                    key={index}
+                    custom={index}
+                    variants={letterVariants}
+                    initial="hidden"
+                    animate={textVisible ? "visible" : "hidden"}
+                    className="inline-block"
+                  >
+                    {char === " " ? "\u00A0" : char}
+                  </motion.span>
+                ))}
               </motion.h1>
             </div>
             
@@ -53,9 +57,7 @@ const Hero = () => {
                 initial={{ y: 80, opacity: 0 }}
                 animate={textVisible ? { y: 0, opacity: 1 } : {}}
                 transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                className={`brutalist-text max-w-lg ${
-                  theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                }`}
+                className="brutalist-text max-w-lg text-gray-700"
               >
                 Bringing ideas to life as a Frontend Developer, building modern web applications 
                 with clean code and seamless user experiences.
@@ -73,21 +75,17 @@ const Hero = () => {
                   onClick={() =>
                     document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
                   }
-                  className={`brutalist-border brutalist-shadow brutalist-hover-lift px-8 py-4 font-bold text-lg cursor-pointer ${
-                    theme === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
-                  }`}
+                  className="brutalist-border brutalist-shadow brutalist-hover-lift px-8 py-4 font-bold text-lg cursor-pointer bg-white text-black"
                 >
                   VIEW WORK
                 </button>
 
-                <a href="#contact"
-               className={`brutalist-accent-bg brutalist-border brutalist-shadow brutalist-hover-lift px-8 py-4 font-bold text-lg cursor-pointer inline-block ${
-               theme === 'dark' ? 'text-black' : ''
-                }`}
-                  >
-                 GET IN TOUCH
-             </a>
-
+                <a
+                  href="#contact"
+                  className="brutalist-accent-bg brutalist-border brutalist-shadow brutalist-hover-lift px-8 py-4 font-bold text-lg cursor-pointer inline-block"
+                >
+                  GET IN TOUCH
+                </a>
               </motion.div>
             </div>
           </div>
@@ -102,9 +100,7 @@ const Hero = () => {
               initial={{ rotate: 0 }}
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 8, ease: "linear" }}
-              className={`absolute inset-0 rounded-full border-4 ${
-                theme === 'dark' ? 'border-blue-400' : 'border-pink-400'
-              }`}
+              className="absolute inset-0 rounded-full border-4 border-pink-400"
               style={{ zIndex: 1 }}
             ></motion.div>
 
@@ -122,9 +118,7 @@ const Hero = () => {
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
-              className={`brutalist-border brutalist-shadow brutalist-hover-lift aspect-square overflow-hidden rounded-full w-64 h-64 ${
-                theme === 'dark' ? 'bg-gray-800' : 'bg-gray-100'
-              }`}
+              className="brutalist-border brutalist-shadow brutalist-hover-lift aspect-square overflow-hidden rounded-full w-64 h-64 bg-gray-100"
               style={{ zIndex: 2 }}
             >
               <img 
@@ -138,17 +132,13 @@ const Hero = () => {
               initial={{ scale: 0, opacity: 0 }}
               animate={textVisible ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 1 }}
-              className={`absolute -top-4 -right-4 w-16 h-16 brutalist-accent-bg brutalist-border ${
-                theme === 'dark' ? 'opacity-80' : ''
-              }`}
+              className="absolute -top-4 -right-4 w-16 h-16 brutalist-accent-bg brutalist-border"
             ></motion.div>
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={textVisible ? { scale: 1, opacity: 1 } : {}}
               transition={{ duration: 0.6, delay: 1.1 }}
-              className={`absolute -bottom-4 -left-4 w-12 h-12 ${
-                theme === 'dark' ? 'bg-white' : 'bg-black'
-              }`}
+              className="absolute -bottom-4 -left-4 w-12 h-12 bg-black"
             ></motion.div>
           </motion.div>
         </div>
