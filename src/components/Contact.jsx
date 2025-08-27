@@ -1,37 +1,46 @@
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
   const contactMethods = [
     {
       Icon: Mail,
       label: "EMAIL",
-      value: "rohit.mehta@email.com",
-      href: "mailto:rohit.mehta@email.com"
+      value: "mehtarohit1012@gmail.com",
+      href: "mailto:mehtarohit1012@gmail.com"
     },
     {
       Icon: Phone,
       label: "PHONE",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+977 9817927648",
+      href: "tel:+977 9817927648"
     },
     {
       Icon: MapPin,
       label: "LOCATION",
-      value: "San Francisco, CA",
-      href: "#"
+      value: "Gaurighat, Kathmandu",
+      href: "https://www.google.com/maps/place/27%C2%B042'46.5%22N+85%C2%B020'44.9%22E/@27.712903,85.3439334,17z"
     }
   ];
 
   const socialLinks = [
-    { Icon: Github, href: "#", label: "GitHub" },
-    { Icon: Linkedin, href: "#", label: "LinkedIn" },
-    { Icon: Twitter, href: "#", label: "Twitter" }
+    { Icon: Github, href: "https://github.com/rohitmehta45", label: "GitHub" },
+    { Icon: Linkedin, href: "https://www.linkedin.com/in/rohit-mehta-5133a8312/", label: "LinkedIn" },
+    { Icon: FaWhatsapp, href: "https://wa.me/9779817927648", label: "WhatsApp" }
   ];
+
+  const handleSend = (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+
+    window.location.href = `mailto:mehtarohit1012@gmail.com?subject=Message from ${name}&body=${message} (${email})`;
+  };
 
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 bg-black text-white">
       <div className="max-w-7xl mx-auto">
-        {/* Main CTA */}
         <div className="text-center mb-20">
           <h2 className="brutalist-heading brutalist-heading-xl text-white mb-8">
             LET'S BUILD
@@ -45,18 +54,17 @@ const Contact = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button className="brutalist-border brutalist-shadow brutalist-hover-lift bg-white text-black px-12 py-6 font-bold text-xl">
-              START A PROJECT
-            </button>
-            <button className="brutalist-border brutalist-shadow brutalist-hover-lift brutalist-accent-bg px-12 py-6 font-bold text-xl border-white">
+            <a
+              href="/Rohit Mehta (Resume).pdf"
+              download
+              className="brutalist-border brutalist-shadow brutalist-hover-lift brutalist-accent-bg px-12 py-6 font-bold text-xl border-white text-white text-center"
+            >
               DOWNLOAD RESUME
-            </button>
+            </a>
           </div>
         </div>
 
-        {/* Contact Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          {/* Contact Methods */}
           <div>
             <h3 className="brutalist-heading brutalist-heading-md text-white mb-8">
               GET IN TOUCH
@@ -83,40 +91,45 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Quick Form */}
           <div>
             <h3 className="brutalist-heading brutalist-heading-md text-white mb-8">
               QUICK MESSAGE
             </h3>
             
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSend}>
               <div>
                 <input 
                   type="text" 
+                  name="name"
                   placeholder="YOUR NAME"
                   className="w-full brutalist-border p-4 bg-white text-black font-semibold placeholder-gray-500 focus:outline-none focus:brutalist-accent"
+                  required
                 />
               </div>
               
               <div>
                 <input 
                   type="email" 
+                  name="email"
                   placeholder="YOUR EMAIL"
                   className="w-full brutalist-border p-4 bg-white text-black font-semibold placeholder-gray-500 focus:outline-none focus:brutalist-accent"
+                  required
                 />
               </div>
               
               <div>
                 <textarea 
+                  name="message"
                   rows="5"
                   placeholder="YOUR MESSAGE"
                   className="w-full brutalist-border p-4 bg-white text-black font-semibold placeholder-gray-500 focus:outline-none focus:brutalist-accent resize-none"
+                  required
                 ></textarea>
               </div>
               
               <button 
                 type="submit"
-                className="w-full brutalist-border brutalist-shadow brutalist-hover-lift brutalist-accent-bg py-4 font-bold text-lg border-white"
+                className="w-full brutalist-border brutalist-shadow brutalist-hover-lift brutalist-accent-bg py-4 font-bold text-lg border-white cursor-pointer"
               >
                 SEND MESSAGE
               </button>
@@ -124,12 +137,11 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Social Links & Footer */}
         <div className="mt-20 pt-12 border-t border-gray-700">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
               <h4 className="brutalist-heading text-2xl text-white mb-4">ROHIT MEHTA</h4>
-              <p className="text-gray-400">Full-Stack Developer & Digital Craftsman</p>
+              <p className="text-gray-400">Frontend Developer & Digital Craftsman</p>
             </div>
             
             <div className="flex gap-6">
@@ -148,7 +160,7 @@ const Contact = () => {
           
           <div className="text-center mt-12 pt-8 border-t border-gray-700">
             <p className="text-gray-400">
-              © 2024 Rohit Mehta. Crafted with precision and passion.
+              © 2025 Rohit Mehta. Crafted with precision and passion.
             </p>
           </div>
         </div>
@@ -158,4 +170,3 @@ const Contact = () => {
 };
 
 export default Contact;
-

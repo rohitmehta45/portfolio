@@ -2,22 +2,22 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "FRONTEND",
-      skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      skills: ["React", "HTML", "CSS", "JavaScript", "Tailwind CSS", "Framer Motion"],
       color: "bg-white"
     },
     {
       title: "BACKEND", 
-      skills: ["Node.js", "Express", "Python", "Django", "REST APIs"],
+      skills: ["JAVA"],
       color: "brutalist-accent-bg"
     },
     {
       title: "DATABASE",
-      skills: ["MongoDB", "PostgreSQL", "Redis", "Firebase", "Supabase"],
-      color: "bg-black text-white"
+      skills: ["MySql", "Xampp"],
+      color: "bg-gray-800 text-white"
     },
     {
       title: "TOOLS",
-      skills: ["Git", "Docker", "AWS", "Vercel", "Figma"],
+      skills: ["Git & GitHub", "Figma"],
       color: "bg-white"
     }
   ];
@@ -57,26 +57,9 @@ const Skills = () => {
                 ))}
               </ul>
 
-              {/* Decorative corner */}
               <div className="absolute top-2 right-2 w-4 h-4 bg-current opacity-20"></div>
             </div>
           ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="brutalist-heading brutalist-heading-lg brutalist-accent">50+</div>
-            <p className="brutalist-text font-semibold">Projects Completed</p>
-          </div>
-          <div className="text-center">
-            <div className="brutalist-heading brutalist-heading-lg brutalist-accent">5+</div>
-            <p className="brutalist-text font-semibold">Years Experience</p>
-          </div>
-          <div className="text-center">
-            <div className="brutalist-heading brutalist-heading-lg brutalist-accent">100%</div>
-            <p className="brutalist-text font-semibold">Client Satisfaction</p>
-          </div>
         </div>
       </div>
     </section>
@@ -84,4 +67,3 @@ const Skills = () => {
 };
 
 export default Skills;
-

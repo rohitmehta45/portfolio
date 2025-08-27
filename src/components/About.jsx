@@ -22,63 +22,57 @@ const About = () => {
             
             <div className="space-y-6 brutalist-text">
               <p>
-                I'm a passionate full-stack developer with 5+ years of experience 
-                building scalable web applications and digital products. My approach 
-                combines technical expertise with creative problem-solving to deliver 
-                solutions that not only work flawlessly but also provide exceptional 
-                user experiences.
+                I’m an aspiring Frontend Developer and a Computer Science student at Texas International College. 
+                I’m building strong skills in HTML, CSS, JavaScript, React, and modern web technologies while creating projects that focus on responsive design and user-friendly experiences.
+              </p>
+
+              <p>
+                Alongside frontend development, I’ve also worked with Java Swing for desktop applications and XAMPP for local server/database management. I use Git & GitHub to manage my 
+                projects and collaborate effectively.
               </p>
               
               <p>
-                Specializing in React, Node.js, and modern web technologies, I've 
-                helped startups and established companies transform their ideas into 
-                robust digital platforms. I believe in writing clean, maintainable 
-                code and staying current with the latest industry trends and best practices.
+                Passionate about clean code and continuous learning, I’m eager to contribute to real-world 
+                projects, grow as a developer, and collaborate with teams that value innovation and creativity.
               </p>
               
-              <p>
-                When I'm not coding, you'll find me exploring new technologies, 
-                contributing to open-source projects, or sharing knowledge with the 
-                developer community through blogs and mentoring.
-              </p>
+             
             </div>
 
             <div className="flex flex-wrap gap-4">
               <span className="brutalist-border brutalist-shadow px-4 py-2 bg-white font-semibold">
-                React & Next.js
+                React.js
               </span>
               <span className="brutalist-border brutalist-shadow px-4 py-2 bg-white font-semibold">
-                Node.js & Express
+                Java Swing
               </span>
               <span className="brutalist-border brutalist-shadow px-4 py-2 bg-white font-semibold">
-                TypeScript
+                HTML, CSS, JS
               </span>
               <span className="brutalist-border brutalist-shadow px-4 py-2 bg-white font-semibold">
-                MongoDB & PostgreSQL
+                Xampp
+              </span>
+              <span className="brutalist-border brutalist-shadow px-4 py-2 bg-white font-semibold">
+                Git and GitHub
               </span>
             </div>
           </div>
-
-          {/* Quirky Icons */}
-          <div className="space-y-6">
-            {quirkyIcons.map(({ Icon, label }, index) => (
-              <div 
-                key={label}
-                className="brutalist-border brutalist-shadow brutalist-hover-lift bg-white p-6 text-center"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <Icon size={48} className="mx-auto mb-4 brutalist-accent" />
-                <h3 className="font-bold text-lg">{label}</h3>
-              </div>
-            ))}
-            
-            {/* Decorative Element */}
-            <div className="brutalist-accent-bg brutalist-border h-20 flex items-center justify-center">
-              <span className="text-white font-bold text-xl">5+ YEARS</span>
-            </div>
+                  {/* Quirky Icons */}
+                  <div className="space-y-6">
+                    {quirkyIcons.map(({ Icon, label }, index) => (
+                      <div 
+                        key={label}
+                        className="brutalist-border brutalist-shadow brutalist-hover-lift bg-white p-6 text-center"
+                        style={{ animationDelay: `${index * 0.1}s` }}
+                      >
+                        <Icon size={48} className="mx-auto mb-4 brutalist-accent" />
+                        <h3 className="font-bold text-lg">{label}</h3>
+                      </div>
+                    ))}
+                    {/* Decorative Element removed */}
+                  </div>
           </div>
         </div>
-      </div>
     </section>
   );
 };

@@ -9,7 +9,7 @@ const Navigation = () => {
     { label: "ABOUT", href: "#about" },
     { label: "SKILLS", href: "#skills" },
     { label: "PROJECTS", href: "#projects" },
-    { label: "EXPERIENCE", href: "#experience" },
+    // { label: "EXPERIENCE", href: "#experience" },
     { label: "CONTACT", href: "#contact" }
   ];
 
@@ -17,10 +17,15 @@ const Navigation = () => {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white brutalist-border-b">
       <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="brutalist-heading text-2xl">
+                    
+          <div
+            className="brutalist-heading text-2xl cursor-pointer"
+            onClick={() => window.location.reload()}
+            title="Refresh"
+          >
             <span className="brutalist-accent">R</span>OHIT
           </div>
+         
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">

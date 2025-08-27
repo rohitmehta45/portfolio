@@ -1,0 +1,115 @@
+.projects-section {
+  padding: 5rem 1rem;
+  background-color: #000; /* same as Contact section */
+  color: #fff;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.projects-heading {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.projects-accent {
+  color: #ff6b6b; /* brutalist-accent */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.project-card {
+  position: relative;
+  border: 2px solid #fff; /* brutalist-border */
+  box-shadow: 4px 4px #fff; /* brutalist-shadow */
+  overflow: hidden;
+  background-color: #000; /* match bg */
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-4px); /* brutalist-hover-lift effect */
+}
+
+.project-image-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.project-card:hover .project-overlay {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.project-overlay-content {
+  opacity: 0;
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+  transition: opacity 0.3s;
+}
+
+.project-card:hover .project-overlay-content {
+  opacity: 1;
+}
+
+.project-links a {
+  margin: 0 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  border: 2px solid #fff; /* brutalist-border */
+  color: #fff;
+  text-decoration: none;
+}
+
+.project-details {
+  padding: 1rem;
+}
+
+.project-tech span {
+  display: inline-block;
+  margin: 0.2rem;
+  padding: 0.2rem 0.5rem;
+  border: 2px solid #fff; /* brutalist-border */
+  font-size: 0.75rem;
+  background-color: #000; /* bg black */
+  color: #fff;
+  font-weight: bold;
+}
