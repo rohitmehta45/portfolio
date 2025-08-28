@@ -6,7 +6,7 @@ const projects = [
     title: "CloudKitchen",
     description:
       "Frontend for a cloud kitchen platform built with React. Organized menu, interactive UI, clean design. Responsive design coming soon.",
-    image: "/images/cloudkitchen.png",
+    image: "../assets/cloudkitchen.png",
     tech: ["React", "Tailwind", "React Router"],
     github: "https://github.com/Texas-CloudKitchen/CloudKitchen_frontend",
     live: "#",
@@ -16,7 +16,7 @@ const projects = [
     title: "RealEstate",
     description:
       "Frontend for a real estate platform. Browse properties, view details, and filter searches through an intuitive UI.",
-    image: "/images/realestate.png",
+    image: "../assets/realestate.png",
     tech: ["React", "React Router", "JavaScript"],
     github: "https://github.com/rohitmehta45/RealEstate-web",
     live: "#",
@@ -26,7 +26,7 @@ const projects = [
     title: "Hotel Booking",
     description:
       "Full-stack hotel booking platform in progress. Browse hotels, view rooms, and manage bookings.",
-    image: "/images/hotelbooking.png",
+    image: "../assets/hotelbooking.png",
     tech: ["React", "Tailwind"],
     github: "https://github.com/rohitmehta45/Hotel-Booking-Web",
     live: "#",
@@ -36,7 +36,7 @@ const projects = [
     title: "MediBox",
     description:
       "Web-based MediBox platform built with React. Users can browse, search, and manage medical products, and access virtual consultations.",
-    image: "/images/medibox.png",
+    image: "../assets/medibox.png",
     tech: ["React", "Tailwind", "Vite"],
     github: "https://github.com/rohitmehta45/rohit-portfolio",
     live: "#",
@@ -46,7 +46,7 @@ const projects = [
     title: "Car Selling",
     description:
       "Demo e-commerce frontend for car selling built with HTML, CSS, and JavaScript. Users can view car listings, add to cart, and checkout.",
-    image: "/images/carselling.png",
+    image: "../assets/carselling.png",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/Cars-Selling-",
     live: "#",
@@ -56,7 +56,7 @@ const projects = [
     title: "Movie Platform",
     description:
       "A React-based platform to browse, search, and watch movies. Interactive UI with clean design, showcasing movies and details dynamically.",
-    image: "/images/movieplatform.png",
+    image: "../assets/movieplatform.png",
     tech: ["React", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/movie-platform-",
     live: "#",
