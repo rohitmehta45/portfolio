@@ -31,11 +31,18 @@ const Contact = () => {
 
   const handleSend = (e) => {
     e.preventDefault();
-    const name = e.target.name.value;
-    const email = e.target.email.value;
-    const message = e.target.message.value;
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const message = e.target.message.value.trim();
 
-    window.location.href = `mailto:mehtarohit1012@gmail.com?subject=Message from ${name}&body=${message} (${email})`;
+    if (!name || !email || !message) {
+      alert("Please fill out all fields before sending the message.");
+      return;
+    }
+
+    window.location.href = `mailto:mehtarohit1012@gmail.com?subject=Message from ${encodeURIComponent(
+      name
+    )}&body=${encodeURIComponent(message)} (${encodeURIComponent(email)})`;
   };
 
   return (
