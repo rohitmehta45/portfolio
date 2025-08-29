@@ -1,42 +1,51 @@
-import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import "@fontsource/orbitron/700.css";
+import { Github, Linkedin } from "lucide-react";
 
 const Hero = () => {
-  const letters = "ROHIT MEHTA".split("");
+  const nameLetters = "ROHIT MEHTA".split("");
+  const descriptionWords = [
+    "I", "am", "a", "passionate", "Frontend", "Developer,", "crafting", "modern,", 
+    "responsive", "web", "applications", "with", "React,", "Tailwind", "CSS,", "and", 
+    "clean", "code."
+  ];
 
   const letterVariants = {
-    hidden: { opacity: 0, y: 5, textShadow: "0px 0px 0px rgba(255,255,255,0)" },
+    hidden: { opacity: 0, x: -50 },
     visible: (i) => ({
-      opacity: [0, 1, 0.8, 1],
-      y: [0, -3, 0],
-      textShadow: [
-        "0px 0px 0px rgba(255,255,255,0)",
-        "0px 0px 10px rgba(0,255,255,0.9)",
-        "0px 0px 20px rgba(255,255,0,1)",
-        "0px 0px 0px rgba(255,255,255,0)"
-      ],
-      transition: {
-        delay: i * 0.05,
-        duration: 1,
-        repeat: Infinity,
-        repeatType: "mirror",
-        ease: "easeInOut"
-      }
+      opacity: 1,
+      x: 0,
+      transition: { delay: i * 0.15, type: "spring", stiffness: 120 }
+    })
+  };
+
+  const wordVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 1 + i * 0.2, type: "spring", stiffness: 120 }
+    })
+  };
+
+  const socialVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: { delay: 4 + i * 0.3, duration: 0.6, ease: "easeOut" }
     })
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden font-['Orbitron'] px-4 md:px-8 lg:px-16 py-12">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0e00] to-[#000000] -z-20"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,0,0.07)_1px,transparent_1px)] bg-[length:120px_120px] opacity-20 -z-20"></div>
 
       <div className="max-w-7xl w-full flex flex-col md:flex-row items-center gap-8 md:gap-12 z-10">
-        {/* Left: Animated Name */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="flex-1 text-left">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-orange-400 drop-shadow-[0_0_20px_rgba(255,120,0,0.9)] tracking-wide sm:tracking-wider">
-            {letters.map((char, i) => (
+            {nameLetters.map((char, i) => (
               <motion.span
                 key={i}
                 custom={i}
@@ -49,30 +58,93 @@ const Hero = () => {
               </motion.span>
             ))}
           </h1>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-md mx-auto md:mx-0 mt-4 sm:mt-6">
-            I am a passionate Frontend Developer, crafting modern, responsive web
-            applications with React, Tailwind CSS, and clean code. I specialize
-            in seamless user experiences and standout portfolio projects.
+
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg lg:text-xl max-w-md mt-4 sm:mt-6 flex flex-wrap gap-2">
+            {descriptionWords.map((word, i) => (
+              <motion.span
+                key={i}
+                custom={i}
+                variants={wordVariants}
+                initial="hidden"
+                animate="visible"
+                className="inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
           </p>
+
+          <motion.div
+            className="mt-6 flex gap-4 flex-wrap"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.5, delay: 3, ease: "easeOut" }}
+          >
+            <a
+              href="#projects"
+              className="px-6 py-3 bg-orange-500 text-white rounded-xl shadow-lg hover:bg-orange-600 transition"
+            >
+              View Work
+            </a>
+            <a
+              href="#contact"
+              className="px-6 py-3 border border-orange-400 text-orange-400 rounded-xl shadow-lg hover:bg-orange-500 hover:text-white transition"
+            >
+              Get in Touch
+            </a>
+          </motion.div>
+
+          <div className="flex gap-6 mt-6">
+            {[
+              { Icon: Github, url: "https://github.com/yourusername", border: "border-orange-500", hover: "hover:text-orange-500 hover:drop-shadow-[0_0_10px_rgba(255,165,0,0.7)]" },
+              { Icon: Linkedin, url: "https://linkedin.com/in/yourusername", border: "border-cyan-400", hover: "hover:text-cyan-400 hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]" }
+            ].map(({ Icon, url, border, hover }, i) => (
+              <motion.a
+                key={i}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`text-white transition-all duration-300 p-2 rounded-full border-2 ${border} flex items-center justify-center ${hover} bg-white/5`}
+                custom={i}
+                variants={socialVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                <Icon size={32} />
+              </motion.a>
+            ))}
+          </div>
         </div>
 
-        {/* Right: Developer Portrait */}
-        <div className="flex-1 flex justify-center md:justify-end mt-8 md:mt-0 relative">
+        <motion.div
+          className="flex-1 flex justify-end mt-8 md:mt-0"
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+        >
           <motion.div
-            className="w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-orange-500/70 shadow-[0_0_30px_rgba(255,140,0,0.7)]"
-            animate={{ y: [0, -15, 0] }}
-            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            className="w-48 h-48 sm:w-64 sm:h-64 md:w-90 md:h-83 rounded-full overflow-hidden border-4 border-orange-500/70 shadow-[0_0_30px_rgba(255,140,0,0.7)]"
+            animate={{
+              y: [0, -15, 0, 10, 0],
+              rotate: [0, 2, 0, -2, 0],
+              scale: [1, 1.02, 1, 1.01, 1]
+            }}
+            transition={{
+              duration: 3,   
+              repeat: Infinity,
+              repeatType: "loop",
+              ease: "easeInOut"
+            }}
           >
             <img
-              src="src/assets/developerPortrait.jpg"
+              src="src/assets/part.jpg"
               alt="Developer Portrait"
               className="object-cover w-full h-full"
             />
           </motion.div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* Floating Background Shapes */}
       <motion.div
         animate={{ y: [0, -30, 0], opacity: [0.2, 0.5, 0.2], scale: [1, 1.05, 1] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}

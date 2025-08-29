@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Code, Coffee, Lightbulb, Zap } from "lucide-react";
 
 const About = () => {
@@ -8,15 +9,35 @@ const About = () => {
     { Icon: Zap, label: "Fast Execution" },
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { staggerChildren: 0.2, delayChildren: 0.3, ease: "easeOut" }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden font-['Orbitron'] px-4 md:px-8 lg:px-16 py-12">
       {/* Background gradients */}
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0e00] to-[#000000] -z-20"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,0,0.07)_1px,transparent_1px)] bg-[length:120px_120px] opacity-20 -z-20"></div>
 
-      <div className="max-w-7xl w-full flex flex-col md:flex-row items-start gap-12 relative z-10">
+      <motion.div
+        className="max-w-7xl w-full flex flex-col md:flex-row items-start gap-12 relative z-10"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {/* Left: About Text */}
-        <div className="flex-1 space-y-8">
+        <motion.div className="flex-1 space-y-8" variants={itemVariants}>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-orange-400 drop-shadow-[0_0_20px_rgba(255,140,0,0.9)]">
             ABOUT
             <br />
@@ -40,31 +61,43 @@ const About = () => {
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-2 mt-4">
-            <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base">React.js</span>
-            <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base">Git & GitHub</span>
-            <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base">Java Swing</span>
-            <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base">HTML, CSS, JS</span>
-            <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base">Xampp</span>
-          </div>
+         <div className="flex flex-wrap gap-0.5 mt-4">
+         <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base hover:text-orange-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] sm:drop-shadow-[0_0_15px_rgba(0,255,255,0.7)] transition-all duration-300 cursor-pointer">
+         React.js
+         </span>
+         <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base hover:text-orange-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] transition-all duration-300 cursor-pointer">
+         Git & GitHub
+         </span>
+         <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base hover:text-orange-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] transition-all duration-300 cursor-pointer">
+         Java Swing
+         </span>
+         <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base hover:text-orange-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] transition-all duration-300 cursor-pointer">
+         HTML, CSS, JS
+         </span>
+         <span className="px-3 py-2 bg-white font-semibold rounded-md shadow text-sm md:text-base hover:text-orange-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] transition-all duration-300 cursor-pointer">
+        Xampp
+        </span>
         </div>
 
+        </motion.div>
+
         {/* Right: Icon marquee */}
-        <div className="flex-1 overflow-hidden w-full relative mt-8 md:mt-12 h-[420px] md:h-[590px]">
+        <motion.div className="flex-1 overflow-hidden w-full relative mt-8 md:mt-12 h-[420px] md:h-[590px]" variants={itemVariants}>
           <div className="flex flex-col animate-marquee-vertical w-[280px] md:w-[420px] mx-auto">
             {quirkyIcons.concat(quirkyIcons).map(({ Icon, label }, index) => (
-              <div 
+              <motion.div
                 key={label + '-' + index}
                 className="bg-white p-6 md:p-8 text-center rounded-xl shadow-lg mb-6 md:mb-8 flex flex-col items-center justify-center"
                 style={{ minHeight: "140px", md: "180px" }}
+                variants={itemVariants}
               >
                 <Icon size={48} className="text-orange-400 mb-3 md:mb-4" />
                 <h3 className="font-bold text-lg md:text-xl">{label}</h3>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* Floating shapes */}
       <div className="absolute top-0 left-10 w-56 h-56 md:w-72 md:h-72 rounded-full bg-orange-500/30 blur-[120px] -z-10 animate-[float_6s_ease-in-out_infinite]"></div>
