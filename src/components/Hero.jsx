@@ -137,7 +137,7 @@ const Hero = () => {
             }}
           >
             <img
-              src="/public/developerPortrait.jpg"
+              src="/images/developerPortrait.jpg"
               alt="Developer Portrait"
               className="object-cover w-full h-full"
             />
