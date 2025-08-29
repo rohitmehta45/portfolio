@@ -19,7 +19,7 @@ const projects = [
     image: "../assets/realestate.png",
     tech: ["React", "React Router", "JavaScript"],
     github: "https://github.com/rohitmehta45/RealEstate-web",
-    live: "#",
+    live: "https://7af2dc32.real-estate-web-3tu.pages.dev/",
   },
   {
     id: 3,
@@ -49,7 +49,7 @@ const projects = [
     image: "../assets/carselling.png",
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/Cars-Selling-",
-    live: "#",
+    live: "https://responsive-cars.pages.dev/",
   },
   {
     id: 6,
