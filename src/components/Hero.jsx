@@ -96,8 +96,8 @@ const Hero = () => {
 
           <div className="flex gap-6 mt-6">
             {[
-              { Icon: Github, url: "https://github.com/yourusername", border: "border-orange-500", hover: "hover:text-orange-500 hover:drop-shadow-[0_0_10px_rgba(255,165,0,0.7)]" },
-              { Icon: Linkedin, url: "https://linkedin.com/in/yourusername", border: "border-cyan-400", hover: "hover:text-cyan-400 hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]" }
+              { Icon: Github, url: "https://github.com/rohitmehta45", border: "border-orange-500", hover: "hover:text-orange-500 hover:drop-shadow-[0_0_10px_rgba(255,165,0,0.7)]" },
+              { Icon: Linkedin, url: "https://www.linkedin.com/in/rohit-mehta-5133a8312/", border: "border-cyan-400", hover: "hover:text-cyan-400 hover:drop-shadow-[0_0_10px_rgba(0,255,255,0.7)]" }
             ].map(({ Icon, url, border, hover }, i) => (
               <motion.a
                 key={i}

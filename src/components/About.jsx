@@ -34,7 +34,7 @@ const About = () => {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true, amount: 0 }}
       >
         {/* Left: About Text */}
         <motion.div className="flex-1 space-y-8" variants={itemVariants}>
