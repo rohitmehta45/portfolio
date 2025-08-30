@@ -1,3 +1,8 @@
+
+
+body {
+  font-family: 'Orbitron', sans-serif;
+}
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -16,8 +21,3 @@
   animation: marquee-vertical 13s linear infinite;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
-
-body {
-  font-family: 'Orbitron', sans-serif;
-}
