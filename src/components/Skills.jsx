@@ -10,14 +10,14 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "FRONTEND",
-      skills: ["React", "HTML", "CSS", "JavaScript", "Tailwind", "Framer Motion"],
+      skills: ["React", "HTML", "CSS", "JavaScript", "Tailwind"],
       color: isDark ? "bg-gray-900 text-white" : "bg-white text-black"
     },
-    {
-      title: "BACKEND",
-      skills: ["JAVA"],
-      color: isDark ? "bg-gray-800 text-white" : "bg-yellow-100 text-black"
-    },
+    // {
+    //   title: "BACKEND",
+    //   skills: ["JAVA"],
+    //   color: isDark ? "bg-gray-800 text-white" : "bg-yellow-100 text-black"
+    // },
     {
       title: "DATABASE",
       skills: ["MySql", "Xampp"],
