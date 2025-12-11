@@ -61,6 +61,16 @@ const projects = [
     github: "https://github.com/rohitmehta45/movie-platform-",
     live: "#",
   },
+  {
+    id: 7,
+    title: "Netflix Clone",
+    description:
+      "A React-based Netflix clone. Browse trending movies, search titles, view details, and enjoy a responsive, interactive UI similar to Netflix.",
+    image: "../assets/netflixclone.png", 
+    tech: ["React", "CSS", "JavaScript", "TMDB API"],
+    github: "https://github.com/rohitmehta45/netflix-clone",
+    live: "https://netflix-clone-8o9.pages.dev/", 
+  },
 ];
 
 const Projects = () => {
