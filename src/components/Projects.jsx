@@ -1,12 +1,21 @@
 import { ExternalLink, Github } from "lucide-react";
 
+
+import cloudkitchenImg from "../assets/cloudkitchen.png";
+import realestateImg from "../assets/realestate.png";
+import hotelbookingImg from "../assets/hotelbooking.png";
+import mediboxImg from "../assets/medibox.png";
+import carsellingImg from "../assets/carselling.png";
+import movieplatformImg from "../assets/movieplatform.png";
+import netflixcloneImg from "../assets/image.png";
+
 const projects = [
   {
     id: 1,
     title: "CloudKitchen",
     description:
       "Frontend for a cloud kitchen platform built with React. Organized menu, interactive UI, clean design. Responsive design coming soon.",
-    image: "../assets/cloudkitchen.png",
+    image: cloudkitchenImg,
     tech: ["React", "Tailwind", "React Router"],
     github: "https://github.com/Texas-CloudKitchen/CloudKitchen_frontend",
     live: "#",
@@ -16,7 +25,7 @@ const projects = [
     title: "RealEstate",
     description:
       "Frontend for a real estate platform. Browse properties, view details, and filter searches through an intuitive UI.",
-    image: "../assets/realestate.png",
+    image: realestateImg,
     tech: ["React", "React Router", "JavaScript"],
     github: "https://github.com/rohitmehta45/RealEstate-web",
     live: "https://7af2dc32.real-estate-web-3tu.pages.dev/",
@@ -26,7 +35,7 @@ const projects = [
     title: "Hotel Booking",
     description:
       "Full-stack hotel booking platform in progress. Browse hotels, view rooms, and manage bookings.",
-    image: "../assets/hotelbooking.png",
+    image: hotelbookingImg,
     tech: ["React", "Tailwind"],
     github: "https://github.com/rohitmehta45/Hotel-Booking-Web",
     live: "#",
@@ -36,7 +45,7 @@ const projects = [
     title: "MediBox",
     description:
       "Web-based MediBox platform built with React. Users can browse, search, and manage medical products, and access virtual consultations.",
-    image: "../assets/medibox.png",
+    image: mediboxImg,
     tech: ["React", "Tailwind", "Vite"],
     github: "https://github.com/rohitmehta45/rohit-portfolio",
     live: "#",
@@ -46,7 +55,7 @@ const projects = [
     title: "Car Selling",
     description:
       "Demo e-commerce frontend for car selling built with HTML, CSS, and JavaScript. Users can view car listings, add to cart, and checkout.",
-    image: "../assets/carselling.png",
+    image: carsellingImg,
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/Cars-Selling-",
     live: "https://responsive-cars.pages.dev/",
@@ -56,7 +65,7 @@ const projects = [
     title: "Movie Platform",
     description:
       "A React-based platform to browse, search, and watch movies. Interactive UI with clean design, showcasing movies and details dynamically.",
-    image: "../assets/movieplatform.png",
+    image: movieplatformImg,
     tech: ["React", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/movie-platform-",
     live: "#",
@@ -66,10 +75,10 @@ const projects = [
     title: "Netflix Clone",
     description:
       "A React-based Netflix clone. Browse trending movies, search titles, view details, and enjoy a responsive, interactive UI similar to Netflix.",
-    image: "../assets/netflixclone.png", 
+    image: netflixcloneImg,
     tech: ["React", "CSS", "JavaScript", "TMDB API"],
     github: "https://github.com/rohitmehta45/netflix-clone",
-    live: "https://netflix-clone-8o9.pages.dev/", 
+    live: "#",
   },
 ];
 
@@ -81,11 +90,11 @@ const Projects = () => {
 
   return (
     <section className="py-20 px-4 md:px-8 lg:px-16 relative font-['Orbitron'] overflow-hidden min-h-screen">
+  
       <div className="absolute top-20 left-0 w-64 h-64 rounded-full bg-orange-500/30 blur-[120px] -z-20 animate-[float_6s_ease-in-out_infinite]"></div>
       <div className="absolute bottom-20 left-16 w-48 h-48 border-4 border-purple-400/40 rounded-full -z-20 animate-[float_10s_ease-in-out_infinite]"></div>
       <div className="absolute top-1/4 right-0 w-72 h-72 rounded-full bg-cyan-400/20 blur-[140px] -z-20 animate-[float_12s_ease-in-out_infinite]"></div>
       <div className="absolute bottom-1/4 right-16 w-40 h-40 border-4 border-pink-400/40 rounded-lg -z-20 animate-[float_14s_ease-in-out_infinite]"></div>
-
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0e00] to-[#000000] -z-30"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,0,0.07)_1px,transparent_1px)] bg-[length:120px_120px] opacity-20 -z-10"></div>
 
@@ -103,7 +112,7 @@ const Projects = () => {
                 key={index}
                 className="min-w-[350px] relative bg-gradient-to-br from-[#181824] via-[#1a2233] to-[#0f2027] text-gray-300 rounded-xl overflow-hidden shadow-lg flex-shrink-0 hover:scale-105 transition-transform duration-300"
               >
-                <div className="relative w-full h-64">
+                <div className="relative w-full h-64 group">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -111,13 +120,13 @@ const Projects = () => {
                     className="w-full h-full object-cover"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 bg-opacity-70 transition-all duration-300 flex items-center justify-center text-center p-6">
-                    <div className="opacity-0 opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center text-center p-6">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <h3 className="text-2xl font-bold text-orange-400 mb-2">
                         {project.title}
                       </h3>
                       <p className="text-sm mb-4">{project.description}</p>
-                      <div className="flex justify-center gap-4">
+                      <div className="flex justify-center gap-4 flex-wrap">
                         <a
                           href={project.github}
                           target="_blank"
