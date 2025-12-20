@@ -1,6 +1,5 @@
 import { ExternalLink, Github } from "lucide-react";
 
-
 import cloudkitchenImg from "../assets/cloudkitchen.png";
 import realestateImg from "../assets/realestate.png";
 import hotelbookingImg from "../assets/hotelbooking.png";
@@ -14,7 +13,7 @@ const projects = [
     id: 1,
     title: "CloudKitchen",
     description:
-      "Frontend for a cloud kitchen platform built with React. Organized menu, interactive UI, clean design. Responsive design coming soon.",
+      "Frontend for a cloud kitchen platform built with React. Organized menu, interactive UI, clean design.",
     image: cloudkitchenImg,
     tech: ["React", "Tailwind", "React Router"],
     github: "https://github.com/Texas-CloudKitchen/CloudKitchen_frontend",
@@ -24,7 +23,7 @@ const projects = [
     id: 2,
     title: "RealEstate",
     description:
-      "Frontend for a real estate platform. Browse properties, view details, and filter searches through an intuitive UI.",
+      "Frontend for a real estate platform. Browse properties and filter searches.",
     image: realestateImg,
     tech: ["React", "React Router", "JavaScript"],
     github: "https://github.com/rohitmehta45/RealEstate-web",
@@ -34,17 +33,17 @@ const projects = [
     id: 3,
     title: "Hotel Booking",
     description:
-      "Full-stack hotel booking platform in progress. Browse hotels, view rooms, and manage bookings.",
+      "Hotel booking platform. Browse hotels, view rooms, and manage bookings.",
     image: hotelbookingImg,
     tech: ["React", "Tailwind"],
     github: "https://github.com/rohitmehta45/Hotel-Booking-Web",
-    live: "#",
+    live: "https://dulcet-raindrop-a43d80.netlify.app/",
   },
   {
     id: 4,
     title: "MediBox",
     description:
-      "Web-based MediBox platform built with React. Users can browse, search, and manage medical products, and access virtual consultations.",
+      "Web-based MediBox platform to browse and manage medical products.",
     image: mediboxImg,
     tech: ["React", "Tailwind", "Vite"],
     github: "https://github.com/rohitmehta45/rohit-portfolio",
@@ -54,7 +53,7 @@ const projects = [
     id: 5,
     title: "Car Selling",
     description:
-      "Demo e-commerce frontend for car selling built with HTML, CSS, and JavaScript. Users can view car listings, add to cart, and checkout.",
+      "Demo e-commerce frontend for car selling using HTML, CSS, and JS.",
     image: carsellingImg,
     tech: ["HTML", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/Cars-Selling-",
@@ -64,7 +63,7 @@ const projects = [
     id: 6,
     title: "Movie Platform",
     description:
-      "A React-based platform to browse, search, and watch movies. Interactive UI with clean design, showcasing movies and details dynamically.",
+      "React-based platform to browse and search movies.",
     image: movieplatformImg,
     tech: ["React", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/movie-platform-",
@@ -74,7 +73,7 @@ const projects = [
     id: 7,
     title: "Netflix Clone",
     description:
-      "A React-based Netflix clone. Browse trending movies, search titles, view details, and enjoy a responsive, interactive UI similar to Netflix.",
+      "Netflix clone with movie browsing and search functionality.",
     image: netflixcloneImg,
     tech: ["React", "CSS", "JavaScript", "TMDB API"],
     github: "https://github.com/rohitmehta45/netflix-clone",
@@ -89,78 +88,68 @@ const Projects = () => {
   };
 
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 relative font-['Orbitron'] overflow-hidden min-h-screen">
-  
-      <div className="absolute top-20 left-0 w-64 h-64 rounded-full bg-orange-500/30 blur-[120px] -z-20 animate-[float_6s_ease-in-out_infinite]"></div>
-      <div className="absolute bottom-20 left-16 w-48 h-48 border-4 border-purple-400/40 rounded-full -z-20 animate-[float_10s_ease-in-out_infinite]"></div>
-      <div className="absolute top-1/4 right-0 w-72 h-72 rounded-full bg-cyan-400/20 blur-[140px] -z-20 animate-[float_12s_ease-in-out_infinite]"></div>
-      <div className="absolute bottom-1/4 right-16 w-40 h-40 border-4 border-pink-400/40 rounded-lg -z-20 animate-[float_14s_ease-in-out_infinite]"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0e00] to-[#000000] -z-30"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,0,0.07)_1px,transparent_1px)] bg-[length:120px_120px] opacity-20 -z-10"></div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-orange-400 drop-shadow-[0_0_20px_rgba(255,140,0,0.9)] mb-16 text-center">
-          SELECTED
-          <br />
-          <span className="text-cyan-400">PROJECTS</span>
+    <section className="py-20 px-4 md:px-8 lg:px-16 font-['Orbitron'] bg-black min-h-screen">
+      <div className="max-w-7xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-orange-400 mb-16 text-center">
+          SELECTED <span className="text-cyan-400">PROJECTS</span>
         </h2>
 
-        <div className="overflow-hidden">
-          <div className="flex animate-marquee gap-8">
-            {projects.concat(projects).map((project, index) => (
-              <div
-                key={index}
-                className="min-w-[350px] relative bg-gradient-to-br from-[#181824] via-[#1a2233] to-[#0f2027] text-gray-300 rounded-xl overflow-hidden shadow-lg flex-shrink-0 hover:scale-105 transition-transform duration-300"
-              >
-                <div className="relative w-full h-64 group">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    onError={handleImageError}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-70 transition-all duration-300 flex items-center justify-center text-center p-6">
-                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="text-2xl font-bold text-orange-400 mb-2">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm mb-4">{project.description}</p>
-                      <div className="flex justify-center gap-4 flex-wrap">
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-white text-black px-4 py-2 font-bold text-sm rounded hover:bg-gray-100 flex items-center gap-2"
-                        >
-                          <Github size={16} /> CODE
-                        </a>
-                        <a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="bg-orange-500 text-white px-4 py-2 font-bold text-sm rounded hover:opacity-90 flex items-center gap-2"
-                        >
-                          <ExternalLink size={16} /> LIVE
-                        </a>
-                      </div>
-                    </div>
-                  </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="bg-[#181824] text-gray-300 rounded-xl overflow-hidden shadow-lg"
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                onError={handleImageError}
+                className="w-full h-56 object-cover"
+                loading="lazy"
+              />
+
+              <div className="p-5">
+                <h3 className="text-xl font-bold text-orange-400 mb-2">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm mb-4">{project.description}</p>
+
+                <div className="flex gap-3 mb-4">
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-black px-4 py-2 text-sm font-bold rounded flex items-center gap-2"
+                  >
+                    <Github size={16} /> Code
+                  </a>
+
+                  {project.live && project.live !== "#" && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-orange-500 text-white px-4 py-2 text-sm font-bold rounded flex items-center gap-2"
+                    >
+                      <ExternalLink size={16} /> Live
+                    </a>
+                  )}
                 </div>
 
-                <div className="p-4 flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-semibold bg-gray-800 text-white rounded"
+                      className="px-3 py-1 text-xs bg-gray-800 rounded"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

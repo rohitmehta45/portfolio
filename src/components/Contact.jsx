@@ -49,19 +49,19 @@ const Contact = () => {
   return (
     <section className="py-12 sm:py-20 px-4 sm:px-8 lg:px-16 relative font-['Orbitron'] overflow-hidden min-h-screen">
       
-      {/* Floating shapes */}
+      
       <div className={`absolute top-12 left-0 w-40 sm:w-64 h-40 sm:h-64 rounded-full blur-[100px] border-4 -z-20 animate-[float_6s_ease-in-out_infinite] ${floatColors[0]}`}></div>
       <div className={`absolute bottom-12 left-8 w-32 sm:w-48 h-32 sm:h-48 rounded-full border-4 -z-20 animate-[float_10s_ease-in-out_infinite] ${floatColors[1]}`}></div>
       <div className={`absolute top-1/4 right-0 w-56 sm:w-72 h-56 sm:h-72 rounded-full blur-[120px] border-4 -z-20 animate-[float_12s_ease-in-out_infinite] ${floatColors[2]}`}></div>
       <div className={`absolute bottom-1/4 right-8 w-32 sm:w-40 h-32 sm:h-40 rounded-lg border-4 -z-20 animate-[float_14s_ease-in-out_infinite] ${floatColors[3]}`}></div>
       <div className={`absolute top-1/3 left-1/3 w-20 sm:w-28 h-20 sm:h-28 rounded-full border-4 -z-20 animate-[float_15s_ease-in-out_infinite] ${floatColors[4]}`}></div>
 
-      {/* Background gradients */}
+     
       <div className="absolute inset-0 bg-gradient-to-br from-black via-[#1a0e00] to-[#000000] -z-30"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,120,0,0.07)_1px,transparent_1px)] bg-[length:100px_100px] sm:bg-[length:120px_120px] opacity-20 -z-10"></div>
 
       <div className="max-w-7xl mx-auto relative z-10 text-white">
-        {/* Heading */}
+        
         <div className="text-center mb-12 sm:mb-20">
           <h2 className="brutalist-heading brutalist-heading-xl mb-6 sm:mb-8">
             LET'S BUILD
@@ -79,7 +79,7 @@ const Contact = () => {
           </div>
         </div>
 
-        {/* Contact + Form */}
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
           <div>
             <h3 className="brutalist-heading brutalist-heading-md mb-6 sm:mb-8">GET IN TOUCH</h3>
@@ -98,7 +98,7 @@ const Contact = () => {
             </div>
           </div>
 
-          {/* Email Form */}
+          
           <div>
             <h3 className="brutalist-heading brutalist-heading-md mb-6 sm:mb-8 !text-blue-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.7)] sm:drop-shadow-[0_0_15px_rgba(0,255,255,0.7)]">
               QUICK MESSAGE

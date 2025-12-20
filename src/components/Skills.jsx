@@ -10,7 +10,7 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "FRONTEND",
-      skills: ["React", "HTML", "CSS", "JavaScript", "Tailwind"],
+      skills: ["React", "HTML", "CSS", "JavaScript"],
       color: isDark ? "bg-gray-900 text-white" : "bg-white text-black"
     },
     // {
