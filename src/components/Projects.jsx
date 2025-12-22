@@ -37,7 +37,7 @@ const projects = [
     image: hotelbookingImg,
     tech: ["React", "Tailwind"],
     github: "https://github.com/rohitmehta45/Hotel-Booking-Web",
-    live: "https://dulcet-raindrop-a43d80.netlify.app/",
+    live: "https://hotel-booking-web.pages.dev/",
   },
   {
     id: 4,
