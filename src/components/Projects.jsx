@@ -1,5 +1,4 @@
 import { ExternalLink, Github } from "lucide-react";
-
 import cloudkitchenImg from "../assets/cloudkitchen.png";
 import realestateImg from "../assets/realestate.png";
 import hotelbookingImg from "../assets/hotelbooking.png";
@@ -7,6 +6,7 @@ import mediboxImg from "../assets/medibox.png";
 import carsellingImg from "../assets/carselling.png";
 import movieplatformImg from "../assets/movieplatform.png";
 import netflixcloneImg from "../assets/image.png";
+import GPTImg from "../assets/ChatGPT.webp";
 
 const projects = [
   {
@@ -79,6 +79,17 @@ const projects = [
     github: "https://github.com/rohitmehta45/netflix-clone",
     live: "#",
   },
+  {
+  id: 8,
+  title: "GPT Chat",
+  description:
+    "A React + Node.js app integrating OpenAI GPT API for interactive chat functionality.",
+  image: GPTImg,
+  tech: ["React", "Node.js", "Express", "OpenAI API"],
+  github: "https://github.com/rohitmehta45/gpt",
+  live: "#", 
+}
+
 ];
 
 const Projects = () => {

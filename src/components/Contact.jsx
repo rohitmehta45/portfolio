@@ -73,7 +73,7 @@ const Contact = () => {
             new projects and collaborate with innovative teams.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
-            <a href="/Rohit Mehta (Resume).pdf" download className="brutalist-border brutalist-shadow brutalist-hover-lift !bg-orange-500 px-8 sm:px-12 py-4 sm:py-6 font-bold text-base sm:text-xl border-white text-white text-center">
+            <a href="/Rohit Mehta_CV Updated.pdf" download className="brutalist-border brutalist-shadow brutalist-hover-lift !bg-orange-500 px-8 sm:px-12 py-4 sm:py-6 font-bold text-base sm:text-xl border-white text-white text-center">
               DOWNLOAD RESUME
             </a>
           </div>
