@@ -99,7 +99,7 @@ const projectsData = [
     image: shopeaseImg,
     tech: ["React", "Firebase Auth", "Tailwind CSS", "React Router"],
     github: "https://github.com/rohitmehta45/e-commerce-shopping.git",
-    live: "https://e-commerce-shopping.pages.dev/",
+    live: "https://b85b0d6c.e-commerce-shopping.pages.dev/",
   },
 ];
 
@@ -164,7 +164,7 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Show More / Show Less Button */}
+        
         <div className="flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
