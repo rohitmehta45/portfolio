@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import cloudkitchenImg from "../assets/cloudkitchen.png";
 import realestateImg from "../assets/realestate.png";
@@ -7,8 +8,9 @@ import carsellingImg from "../assets/carselling.png";
 import movieplatformImg from "../assets/movieplatform.png";
 import netflixcloneImg from "../assets/image.png";
 import GPTImg from "../assets/ChatGPT.webp";
+import shopeaseImg from "../assets/bgImg_Auth.jpeg";
 
-const projects = [
+const projectsData = [
   {
     id: 1,
     title: "CloudKitchen",
@@ -80,53 +82,58 @@ const projects = [
     live: "#",
   },
   {
-  id: 8,
-  title: "GPT Chat",
-  description:
-    "A React + Node.js app integrating OpenAI GPT API for interactive chat functionality.",
-  image: GPTImg,
-  tech: ["React", "Node.js", "Express", "OpenAI API"],
-  github: "https://github.com/rohitmehta45/gpt",
-  live: "#", 
-}
-
+    id: 8,
+    title: "GPT Chat",
+    description:
+      "A React + Node.js app integrating OpenAI GPT API for interactive chat functionality.",
+    image: GPTImg,
+    tech: ["React", "Node.js", "Express", "OpenAI API"],
+    github: "https://github.com/rohitmehta45/gpt",
+    live: "#", 
+  },
+  {
+    id: 9,
+    title: "ShopEase",
+    description:
+      "Full frontend of ShopEase e-commerce app with role-based login, cart, and responsive UI.",
+    image: shopeaseImg,
+    tech: ["React", "Firebase Auth", "Tailwind CSS", "React Router"],
+    github: "https://github.com/rohitmehta45/e-commerce-shopping.git",
+    live: "https://e-commerce-shopping.pages.dev/",
+  },
 ];
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
+
   const handleImageError = (e) => {
     e.target.src =
       "https://via.placeholder.com/400x300/f3f4f6/6b7280?text=Project+Image";
   };
 
+  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 3);
+
   return (
-    <section className="py-20 px-4 md:px-8 lg:px-16 font-['Orbitron'] bg-black min-h-screen">
+    <section id="projects" className="py-20 px-4 md:px-8 lg:px-16 bg-black min-h-screen">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold text-orange-400 mb-16 text-center">
           SELECTED <span className="text-cyan-400">PROJECTS</span>
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-[#181824] text-gray-300 rounded-xl overflow-hidden shadow-lg"
-            >
+          {displayedProjects.map((project) => (
+            <div key={project.id} className="bg-[#181824] text-gray-300 rounded-xl overflow-hidden shadow-lg">
               <img
                 src={project.image}
                 alt={project.title}
                 onError={handleImageError}
                 className="w-full h-56 object-cover"
-                loading="lazy"
               />
-
               <div className="p-5">
-                <h3 className="text-xl font-bold text-orange-400 mb-2">
-                  {project.title}
-                </h3>
-
+                <h3 className="text-xl font-bold text-orange-400 mb-2">{project.title}</h3>
                 <p className="text-sm mb-4">{project.description}</p>
 
-                <div className="flex gap-3 mb-4">
+                <div className="flex gap-3 mb-4 flex-wrap">
                   <a
                     href={project.github}
                     target="_blank"
@@ -135,7 +142,6 @@ const Projects = () => {
                   >
                     <Github size={16} /> Code
                   </a>
-
                   {project.live && project.live !== "#" && (
                     <a
                       href={project.live}
@@ -150,17 +156,22 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-3 py-1 text-xs bg-gray-800 rounded"
-                    >
-                      {tech}
-                    </span>
+                    <span key={tech} className="px-3 py-1 text-xs bg-gray-800 rounded">{tech}</span>
                   ))}
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Show More / Show Less Button */}
+        <div className="flex justify-center mt-10">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-2 bg-orange-500 text-black font-bold rounded hover:bg-orange-400 transition"
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
         </div>
       </div>
     </section>
