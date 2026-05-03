@@ -9,6 +9,7 @@ import movieplatformImg from "../assets/movieplatform.png";
 import netflixcloneImg from "../assets/image.png";
 import GPTImg from "../assets/ChatGPT.webp";
 import shopeaseImg from "../assets/bgImg_Auth.jpeg";
+import bmiImg from "../assets/bmi.webp";
 
 const projectsData = [
   {
@@ -101,6 +102,16 @@ const projectsData = [
     github: "https://github.com/rohitmehta45/e-commerce-shopping.git",
     live: "https://b85b0d6c.e-commerce-shopping.pages.dev/",
   },
+  {
+  id: 10,
+  title: "BMI Calculator",
+  description:
+    "A React-based BMI calculator that calculates Body Mass Index with dynamic color indicators (green, yellow, red) based on health status.",
+  image: bmiImg,
+  tech: ["React", "CSS", "JavaScript"],
+  github: "https://github.com/rohitmehta45/bmi_calc.git",
+  live: "https://bmi-calc-2w6.pages.dev/",
+}
 ];
 
 const Projects = () => {
