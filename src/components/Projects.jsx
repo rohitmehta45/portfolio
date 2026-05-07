@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ExternalLink, Github } from "lucide-react";
+
 import cloudkitchenImg from "../assets/cloudkitchen.png";
 import realestateImg from "../assets/realestate.png";
 import hotelbookingImg from "../assets/hotelbooking.png";
@@ -10,6 +11,7 @@ import netflixcloneImg from "../assets/image.png";
 import GPTImg from "../assets/ChatGPT.webp";
 import shopeaseImg from "../assets/bgImg_Auth.jpeg";
 import bmiImg from "../assets/bmi.webp";
+import todoImg from "../assets/todoImg.png"; 
 
 const projectsData = [
   {
@@ -65,8 +67,7 @@ const projectsData = [
   {
     id: 6,
     title: "Movie Platform",
-    description:
-      "React-based platform to browse and search movies.",
+    description: "React-based platform to browse and search movies.",
     image: movieplatformImg,
     tech: ["React", "CSS", "JavaScript"],
     github: "https://github.com/rohitmehta45/movie-platform-",
@@ -90,7 +91,7 @@ const projectsData = [
     image: GPTImg,
     tech: ["React", "Node.js", "Express", "OpenAI API"],
     github: "https://github.com/rohitmehta45/gpt",
-    live: "#", 
+    live: "#",
   },
   {
     id: 9,
@@ -103,15 +104,25 @@ const projectsData = [
     live: "https://b85b0d6c.e-commerce-shopping.pages.dev/",
   },
   {
-  id: 10,
-  title: "BMI Calculator",
-  description:
-    "A React-based BMI calculator that calculates Body Mass Index with dynamic color indicators (green, yellow, red) based on health status.",
-  image: bmiImg,
-  tech: ["React", "CSS", "JavaScript"],
-  github: "https://github.com/rohitmehta45/bmi_calc.git",
-  live: "https://bmi-calc-2w6.pages.dev/",
-}
+    id: 10,
+    title: "BMI Calculator",
+    description:
+      "A React-based BMI calculator that calculates Body Mass Index with dynamic color indicators.",
+    image: bmiImg,
+    tech: ["React", "CSS", "JavaScript"],
+    github: "https://github.com/rohitmehta45/bmi_calc.git",
+    live: "https://8d6cccbf.bmi-calc-2w6.pages.dev/",
+  },
+  {
+    id: 11,
+    title: "Todo List App",
+    description:
+      "A React-based Todo List application with add, delete, and mark-as-complete functionality using hooks.",
+    image: todoImg,
+    tech: ["React", "Hooks", "CSS", "JavaScript"],
+    github: "https://github.com/rohitmehta45/ToDo-List.git",
+    live: "https://todo-list-3w8.pages.dev/",
+  },
 ];
 
 const Projects = () => {
@@ -122,10 +133,15 @@ const Projects = () => {
       "https://via.placeholder.com/400x300/f3f4f6/6b7280?text=Project+Image";
   };
 
-  const displayedProjects = showAll ? projectsData : projectsData.slice(0, 3);
+  const displayedProjects = showAll
+    ? projectsData
+    : projectsData.slice(0, 3);
 
   return (
-    <section id="projects" className="py-20 px-4 md:px-8 lg:px-16 bg-black min-h-screen">
+    <section
+      id="projects"
+      className="py-20 px-4 md:px-8 lg:px-16 bg-black min-h-screen"
+    >
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-extrabold text-orange-400 mb-16 text-center">
           SELECTED <span className="text-cyan-400">PROJECTS</span>
@@ -133,15 +149,22 @@ const Projects = () => {
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {displayedProjects.map((project) => (
-            <div key={project.id} className="bg-[#181824] text-gray-300 rounded-xl overflow-hidden shadow-lg">
+            <div
+              key={project.id}
+              className="bg-[#181824] text-gray-300 rounded-xl overflow-hidden shadow-lg"
+            >
               <img
                 src={project.image}
                 alt={project.title}
                 onError={handleImageError}
                 className="w-full h-56 object-cover"
               />
+
               <div className="p-5">
-                <h3 className="text-xl font-bold text-orange-400 mb-2">{project.title}</h3>
+                <h3 className="text-xl font-bold text-orange-400 mb-2">
+                  {project.title}
+                </h3>
+
                 <p className="text-sm mb-4">{project.description}</p>
 
                 <div className="flex gap-3 mb-4 flex-wrap">
@@ -153,6 +176,7 @@ const Projects = () => {
                   >
                     <Github size={16} /> Code
                   </a>
+
                   {project.live && project.live !== "#" && (
                     <a
                       href={project.live}
@@ -167,7 +191,12 @@ const Projects = () => {
 
                 <div className="flex flex-wrap gap-2">
                   {project.tech.map((tech) => (
-                    <span key={tech} className="px-3 py-1 text-xs bg-gray-800 rounded">{tech}</span>
+                    <span
+                      key={tech}
+                      className="px-3 py-1 text-xs bg-gray-800 rounded"
+                    >
+                      {tech}
+                    </span>
                   ))}
                 </div>
               </div>
@@ -175,7 +204,6 @@ const Projects = () => {
           ))}
         </div>
 
-        
         <div className="flex justify-center mt-10">
           <button
             onClick={() => setShowAll(!showAll)}
